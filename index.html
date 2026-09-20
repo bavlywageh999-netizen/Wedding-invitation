@@ -1107,6 +1107,7 @@
       if (CONFIG.youtubeId && !ytFailed) startYT();
       else if (CONFIG.musicSrc) {
         if (!fileEl) { fileEl = new Audio(CONFIG.musicSrc); fileEl.loop = true; fileEl.preload = "auto"; }
+        fileEl.currentTime = 15; // غير رقم 15 لعدد الثواني اللي عايز الأغنية تبدأ منها
         var pr = fileEl.play(); if (pr && pr.catch) pr.catch(function () { running = false; sync(); });
       } else if (!startSynth()) running = false;
       sync();
